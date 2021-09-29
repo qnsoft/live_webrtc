@@ -80,7 +80,7 @@ func (wl *WaitList) Get(k string) *WebRTC {
 func init() {
 	live_sdk.InstallPlugin(&live_sdk.PluginConfig{
 		Config: &config,
-		Name:   "WebRTC",
+		Name:   "LiveWebRTC",
 		Run:    run,
 	})
 }
@@ -212,7 +212,7 @@ func run() {
 		var rtc WebRTC
 		sub := live_sdk.Subscriber{
 			ID:   r.RemoteAddr,
-			Type: "LiveWebRTC",
+			Type: "WebRTC",
 		}
 		bytes, err := ioutil.ReadAll(r.Body)
 		defer func() {
